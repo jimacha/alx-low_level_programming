@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include <math.h>
 
 /**
  * print_last_digit - prints the last digit
@@ -16,7 +16,7 @@ int print_last_digit(int n)
 	count = log10(num);
 
 	last = num % 10;
-	_putchar('last = %d\n', last);
+	printf("last = %d\n", last);
 
 	return (0);
 }
