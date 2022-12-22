@@ -1,10 +1,11 @@
+#include "main.h"
 #include <stdio.h>
 /**
- * main - magic code
- * Return: Always 0
+ * print_number - prints a number
+ * @n: number to be printed
+ * Return: 0
  */
-
-int main(void)
+void print_number(int n)
 {
 	int n;
 	int a[5];
