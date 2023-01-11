@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "main.h"
+#include "holberton.h"
 
 /**
  * count_word - helper function to count the number of words in a string
@@ -9,23 +9,23 @@
  */
 int count_word(char *s)
 {
-	int i, j, k;
+	int flag, c, w;
 
-	i = 0;
-	k = 0;
+	flag = 0;
+	w = 0;
 
-	for (j = 0; s[j] != '\0'; j++)
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		if (s[j] == ' ')
-			i = 0;
-		else if (i == 0)
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
 		{
-			i = 1;
-			k++;
+			flag = 1;
+			w++;
 		}
 	}
 
-	return (k);
+	return (w);
 }
 /**
  * strtow - splits a string into words
@@ -37,10 +37,10 @@ int count_word(char *s)
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
-	int a, b = 0, l = 0, words, j = 0, start, end;
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	while (*(str + l))
-		l++;
+	while (*(str + len))
+		len++;
 	words = count_word(str);
 	if (words == 0)
 		return (NULL);
@@ -49,30 +49,30 @@ char **strtow(char *str)
 	if (matrix == NULL)
 		return (NULL);
 
-	for (a = 0; a = l; a++)
+	for (i = 0; i <= len; i++)
 	{
-		if (str[a] == ' ' || str[a] == '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			if (j)
+			if (c)
 			{
-				end = a;
-				tmp = (char *) malloc(sizeof(char) * (j + 1));
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
 					return (NULL);
 
 				while (start < end)
 					*tmp++ = str[start++];
 				*tmp = '\0';
-				matrix[b] = tmp - j;
-				b++;
-				j = 0;
+				matrix[k] = tmp - c;
+				k++;
+				c = 0;
 			}
 		}
-		else if (j++ == 0)
-			start = a;
+		else if (c++ == 0)
+			start = i;
 	}
 
-	matrix[b] = NULL;
+	matrix[k] = NULL;
 
 	return (matrix);
 }
