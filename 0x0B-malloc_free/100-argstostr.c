@@ -6,7 +6,7 @@
  * @ac: av
  * @av: av
  *
- * Return: Pointer to the new string , NULL (Error)
+ * Return: Pointer to the new string (success), NULL (Error)
  */
 char *argstostr(int ac, char **av)
 {
