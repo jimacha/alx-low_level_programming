@@ -9,11 +9,12 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *ptr = malloc(b);
+	void *ptr = NULL;
+	
+	ptr = (void *)malloc(b);
 
 	if (ptr == NULL)
 	{
-		_putchar("Error allocating memory\n");
 		exit(98);
 	}
 	return (ptr);
