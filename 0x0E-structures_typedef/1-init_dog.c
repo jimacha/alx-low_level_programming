@@ -1,4 +1,4 @@
-#include <string.h>
+#include <stdlib.h>
 #include "dog.h"
 /**
  * init_dog - initializes a variable of type struct dog
@@ -7,10 +7,11 @@
  * @age: age to initialize
  * @owner: owner to initialize
  */
-
-dog(struct dog *d, char *name, float age, char *owner)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	strcpy(d->name, name);
+	if (d == NULL)
+		d = malloc(sizeof(struct dog));
+	d->name = name;
 	d->age = age;
-	strcpy(d->owner, owner);
+	d->owner = owner;
 }
