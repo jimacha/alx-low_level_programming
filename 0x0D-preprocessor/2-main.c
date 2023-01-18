@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	char fileName[] = _FILE_;
+	char fileName[] = __FILE__;
 	int len = strlen(fileName);
 
 	write(STDOUT_FILENO, fileName + 1, len - 2);
