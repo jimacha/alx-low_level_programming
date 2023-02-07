@@ -3,7 +3,7 @@
 
 /*
  * File: main.h
- * AUth: Jimmy Mungai
+ * Auth: Jimmy Mungai
  * Desc: Header file containing prototypes for all functions
  *       written in the 0x14-bit_manipulation directory.
  */
