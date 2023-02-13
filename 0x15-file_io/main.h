@@ -2,10 +2,8 @@
 #define HOLBERTON_H
 
 /*
- * File: holberton.h
- * Auth: Brennan D Baraban
  * Desc: Header file containing prototypes for all functions
- *       written in the 0x14-file_io directory.
+ *       written in the 0x15-file_io directory.
  */
 
 #include <sys/types.h>
